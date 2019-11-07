@@ -2,8 +2,18 @@
 
 require_once 'Vehicle.php';
 
-class Car extends Vehicle
+class Car extends Vehicle implements LightableInterface
 {
+    public function switchOn()
+    {
+       return true;
+    }
+
+    public function switchOff()
+    {
+        return false;
+    }
+
     /**
      * @var string
      */

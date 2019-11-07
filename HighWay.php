@@ -5,7 +5,7 @@ abstract class HighWay
 {
     abstract public function addVehicle($vehicle);
 
-    protected $currentVehicles = [];
+protected $currentVehicles = [];
 
     protected $nbLane;
 

@@ -3,7 +3,7 @@
 
 require_once 'Vehicle.php';
 
-class Truck extends Vehicle
+class Truck extends Vehicle implements LightableInterface
 {
     private $capacity = 100;
 
@@ -48,5 +48,16 @@ class Truck extends Vehicle
         $this->chargement = 100;
         $sentence .= "I'm full !";
         return $sentence;
+
     }
+    public function switchOn()
+    {
+        return true;
+    }
+
+    public function switchOff()
+    {
+        return false;
+    }
+
 }
