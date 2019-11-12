@@ -2,6 +2,7 @@
 
 require_once 'HighWay.php';
 require_once 'Vehicle.php';
+require_once 'LightableInterface.php';
 require_once 'Truck.php';
 require_once 'Car.php';
 require_once 'PedestrianWay.php';
@@ -33,6 +34,17 @@ $pedestrian9->addVehicle($car);
 $pedestrian9->addVehicle($bike);
 $pedestrian9->addVehicle($skate);
 
-var_dump($motor5);
-var_dump($pedestrian9);
-var_dump($residential2);
+var_dump($car);
+
+try
+{
+    $car -> start();
+} catch (Exception $e) {
+    echo 'Tu dois desserer ton frein a main<br>';
+    $car -> setParkBrake();
+    $car -> start();
+} finally {
+    echo 'Ma voiture roule comme un donut';
+}
+
+var_dump($car);
