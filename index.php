@@ -10,6 +10,7 @@ require_once 'ResidentialWay.php';
 require_once 'MotorWay.php';
 require_once 'Bicycle.php';
 require_once 'Skateboard.php';
+require_once 'Speedometer.php';
 
 $truck = new Truck('red', 3, 40,10);
 $car = new Car('blue', 4, 'fuel');
@@ -34,17 +35,7 @@ $pedestrian9->addVehicle($car);
 $pedestrian9->addVehicle($bike);
 $pedestrian9->addVehicle($skate);
 
-var_dump($car);
+echo Speedometer::convertKmToMiles(10) . '<br>';
 
-try
-{
-    $car -> start();
-} catch (Exception $e) {
-    echo 'Tu dois desserer ton frein a main<br>';
-    $car -> setParkBrake();
-    $car -> start();
-} finally {
-    echo 'Ma voiture roule comme un donut';
-}
+echo Speedometer::convertMilesToKm(10);
 
-var_dump($car);
